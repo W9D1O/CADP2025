@@ -5,6 +5,7 @@ var
     
 begin
     writeln('Ingrese un numero: ');
+    readln(a);
     if a < 0 then
         writeln('El valor absoluto del numero ingresado es: ',a*-1)
     else
