@@ -34,7 +34,7 @@ procedure leen_clientes(var min,megas:integer);
 
 var
   i:integer;
-  l:linea
+  l:linea;
   c:Clientes;
 begin
   {Se resetean las variables para cada nuevo cliente}
@@ -44,7 +44,7 @@ begin
   readln(c.codigo);
   writeln('Ingrese cantidad de lineas vinculadas al cliente: ');
   readln(c.cant_li);
-  for i:= 1 to c.cant_li do begin
+  for i:= 1 to (c.cant_li) do begin
     leer_lineas(l);
     min:= min + l.min;
     megas:= l.megas;
@@ -61,6 +61,6 @@ begin
     abono:= 0; {Se resetea para cada nuevo acliente que va a ser leido}
     leen_clientes(min,megas);
     abono:= PMB * megas + PMINUTOS * min;
-    writeln('El monto a abonar es: ',0:2); {Se imprime el monto total a abonar}
+    writeln('El monto a abonar es: ',abono:0:2); {Se imprime el monto total a abonar}
   end;
   end.
